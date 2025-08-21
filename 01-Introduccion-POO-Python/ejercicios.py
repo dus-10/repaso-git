@@ -16,24 +16,24 @@ print("\nEJERCICIO 1: CLASE ESTUDIANTE")
 print("-" * 40)
 
 class Estudiante:
-    def __init__(self, nombre, edad, carrera):
+    def __init__(self, nombre: str, edad: int, carrera: str):
         self.nombre = nombre
         self.edad = edad
         self.carrera = carrera
         self.promedio = 0.0
         self.materias_inscritas = []
     
-    def presentarse(self):
+    def presentarse(self) -> str:
         return f"Hola, soy {self.nombre}, tengo {self.edad} años y estudio {self.carrera}."
     
-    def inscribir_materia(self, materia):
+    def inscribir_materia(self, materia: str) -> str:
         if materia not in self.materias_inscritas:
             self.materias_inscritas.append(materia)
             return f"{self.nombre} se ha inscrito en {materia}"
         else:
             return f"{self.nombre} ya está inscrito en {materia}"
     
-    def agregar_nota(self, materia, nota):
+    def agregar_nota(self, materia: str, nota: float) -> str:
         if materia in self.materias_inscritas and 0.0 <= nota <= 5.0:
             if self.promedio == 0.0:
                 self.promedio = nota
@@ -61,7 +61,7 @@ print("\nEJERCICIO 2: CLASE RECTÁNGULO")
 print("-" * 40)
 
 class Rectangulo:
-    def __init__(self, base, altura):
+    def __init__(self, base: float, altura: float):
         if base > 0 and altura > 0:
             self.base = base
             self.altura = altura
